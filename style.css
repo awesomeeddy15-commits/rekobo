@@ -23,8 +23,7 @@ body {
 }
 
 /* Navigation */
-/* Navigation */
-header {
+header:not(.page-header) {
     background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
     backdrop-filter: blur(12px); /* The frosted glass blur effect */
     -webkit-backdrop-filter: blur(12px); /* For Safari support */
@@ -138,10 +137,10 @@ header {
 
 .hero-img {
     max-width: 100%;
-    max-height: 450px; /* Prevents it from getting too tall relative to the text */
+    max-height: 450px;
     width: auto;
-    height: auto; /* Maintains the perfect original aspect ratio naturally */
-    border-radius: 20px; /* Hugs the actual visible edges of the image */
+    height: auto;
+    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
@@ -197,7 +196,7 @@ header {
 
 /* Modal Form Styles */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -205,7 +204,7 @@ header {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px); /* Modern blur effect */
+    backdrop-filter: blur(4px);
     align-items: center;
     justify-content: center;
 }
@@ -219,7 +218,7 @@ header {
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     max-height: 90vh;
-    overflow-y: auto; /* Allows scrolling inside modal if screen is small */
+    overflow-y: auto;
 }
 
 .modal-content h2 {
@@ -293,7 +292,87 @@ footer {
     margin-top: auto;
 }
 
-/* Responsive Design */
+/* --- New Internal Pages Styles --- */
+.page-header {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.internal-section {
+    padding: 5rem 5%;
+    background-color: var(--white);
+}
+
+.content-row {
+    background-color: var(--mint-green);
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.content-row h2 {
+    color: var(--dark-green);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.content-row p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.feature-list {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.feature-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(7, 115, 75, 0.2);
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+/* Contact Page Grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background-color: var(--mint-green);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.contact-card h2 {
+    color: var(--dark-green);
+    font-size: 1.8rem;
+}
+
+/* Unified Responsive Design */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
@@ -304,7 +383,44 @@ footer {
         width: 100%;
         height: 300px;
     }
-    .nav-links {
-        display: none;
+    header:not(.page-header) {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
     }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+    .nav-links a {
+        margin-right: 0;
+        font-size: 0.95rem;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .content-row {
+        padding: 2rem;
+    }
+}
+
+/* Embedded Map Styles */
+.map-section {
+    padding: 0 5% 5rem 5%;
+    background-color: var(--white);
+}
+
+.map-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden; /* Forces the iframe to have rounded corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.map-container iframe {
+    display: block;
 }

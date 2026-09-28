@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rekobo Story | Rekobo</title>
+    
+    <link rel="icon" type="image/png" href="images/rekobodarkfavicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/rekobodarklogo.png" alt="Rekobo Logo" class="nav-logo">
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="impact.html" style="color: var(--dark-green);">The Rekobo Story</a>
+            <a href="contact.html">Contact</a>
+            <button class="btn-dark open-modal" style="margin-top: 1rem;">Schedule a Pickup</button>
+        </nav>
+    </header>
+
+    <main>
+        <header class="page-header">
+            <h1>Restoring the Environment. Reclaiming Lives.</h1>
+            <p>Rekobo is built on a dual mission: protecting our city from environmental degradation and protecting our children from the dangers of the dumpsites.</p>
+        </header>
+
+        <section class="internal-section">
+            <div class="content-row">
+                <h2>Stopping Floods Before They Start.</h2>
+                <p>Unmanaged plastic waste is the primary culprit behind blocked city drainages, turning ordinary rainstorms into destructive floods. When plastics clog waterways, they stagnate and breed waterborne diseases that threaten entire neighborhoods.</p>
+                <p>By intercepting recyclables directly at the source—homes and businesses—Rekobo ensures waste flows safely to our processing plants instead of littering our streets.</p>
+            </div>
+
+            <div class="content-row">
+                <h2>From Scavenging to Schooling.</h2>
+                <p>Public dumpsters hide a harsh reality: young children and vulnerable youths spending their days digging through hazardous waste to survive. This exposes them to severe health risks and traps them outside the formal education system.</p>
+                <p>Rekobo actively disrupts this cycle. We provide safe, sanitized employment at our facilities and sponsor educational pathways, turning waste pickers into wage earners and students. Every kilogram you recycle helps fund a brighter, safer future for the next generation.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Rekobo. Building a cleaner Uyo.</p>
+    </footer>
+
+    <!-- The Hidden Modal Form -->
+    <div id="pickup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Schedule a Pickup</h2>
+            <p style="margin-bottom: 2rem; color: #555; font-size: 0.95rem;">Fill out the details below. We'll reach out on WhatsApp to confirm.</p>
+            <form id="pickup-form">
+                <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" required></div>
+                <div class="form-group"><label for="whatsapp">WhatsApp Number</label><input type="tel" id="whatsapp" name="whatsapp" required></div>
+                <div class="form-group"><label for="address">Pickup Address</label><input type="text" id="address" name="address" required></div>
+                <div class="form-group">
+                    <label for="waste-type">Primary Waste Type</label>
+                    <select id="waste-type" name="waste-type" required>
+                        <option value="" disabled selected>Select what we are picking up...</option>
+                        <option value="pet-aluminum">PET Bottles & Aluminum Cans</option>
+                        <option value="cardboard">Cardboard & Paper</option>
+                        <option value="ewaste">E-Waste</option>
+                        <option value="mixed">Mixed Household Recycling</option>
+                    </select>
+                </div>
+                <div class="form-group"><label for="notes">Additional Instructions (Optional)</label><textarea id="notes" name="notes"></textarea></div>
+                <button type="submit" class="btn-primary submit-btn">Request Pickup</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
