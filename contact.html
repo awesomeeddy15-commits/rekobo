@@ -54,26 +54,26 @@
                 <!-- Dedicated Booking Form -->
                 <div class="contact-card">
                     <h2>Book a Service</h2>
-                    <form style="margin-top: 1.5rem;">
+                    <form id="contact-booking-form" style="margin-top: 1.5rem;">
                         <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" required>
+                            <label for="contact-name">Full Name</label>
+                            <input type="text" id="contact-name" required>
                         </div>
                         <div class="form-group">
-                            <label>Phone Number / WhatsApp</label>
-                            <input type="tel" required>
+                            <label for="contact-phone">Phone Number / WhatsApp</label>
+                            <input type="tel" id="contact-phone" required>
                         </div>
                         <div class="form-group">
-                            <label>Residential Address / Location</label>
-                            <input type="text" required>
+                            <label for="contact-address">Residential Address / Location</label>
+                            <input type="text" id="contact-address" required>
                         </div>
                         <div class="form-group">
-                            <label>Service Needed</label>
-                            <select required>
+                            <label for="contact-service">Service Needed</label>
+                            <select id="contact-service" required>
                                 <option value="" disabled selected>Select a service...</option>
-                                <option value="drop-off">Drop-Off for Cash</option>
-                                <option value="home-setup">Home Waste Separation Setup</option>
-                                <option value="pickup">Schedule a Pickup</option>
+                                <option value="Drop-Off for Cash">Drop-Off for Cash</option>
+                                <option value="Home Waste Separation Setup">Home Waste Separation Setup</option>
+                                <option value="Schedule a Pickup">Schedule a Pickup</option>
                             </select>
                         </div>
                         <button type="submit" class="btn-dark submit-btn">Submit Request</button>

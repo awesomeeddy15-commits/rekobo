@@ -3,52 +3,71 @@ const modal = document.getElementById('pickup-modal');
 const closeBtn = document.querySelector('.close-btn');
 const openModalBtns = document.querySelectorAll('.open-modal');
 
-// Open modal when any "Schedule Pickup" button is clicked
-openModalBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.preventDefault(); 
-        modal.style.display = 'flex'; // Changes from 'none' to 'flex' to show it
+if (openModalBtns) {
+    openModalBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            modal.style.display = 'flex';
+        });
     });
-});
+}
 
-// Close modal when clicking the 'X' button
-closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
+if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+}
 
-// Close modal when clicking anywhere outside the white box
 window.addEventListener('click', (event) => {
     if (event.target === modal) {
         modal.style.display = 'none';
     }
 });
 
+// --- Centralized WhatsApp Number ---
+const rekoboWhatsAppNumber = "2348036034846"; 
 
-// --- Form Submission Logic (WhatsApp) ---
-document.getElementById('pickup-form').addEventListener('submit', function(event) {
-    event.preventDefault(); 
+// --- Modal Form Submission (All Pages) ---
+const pickupForm = document.getElementById('pickup-form');
+if (pickupForm) {
+    pickupForm.addEventListener('submit', function(event) {
+        event.preventDefault(); 
 
-    // Grab the data from the form
-    const name = document.getElementById('name').value;
-    const whatsapp = document.getElementById('whatsapp').value;
-    const address = document.getElementById('address').value;
-    const wasteTypeDropdown = document.getElementById('waste-type');
-    const wasteType = wasteTypeDropdown.options[wasteTypeDropdown.selectedIndex].text;
-    const notes = document.getElementById('notes').value;
+        const name = document.getElementById('name').value;
+        const whatsapp = document.getElementById('whatsapp').value;
+        const address = document.getElementById('address').value;
+        const wasteTypeDropdown = document.getElementById('waste-type');
+        const wasteType = wasteTypeDropdown.options[wasteTypeDropdown.selectedIndex].text;
+        const notes = document.getElementById('notes').value;
 
-    // Format the message for WhatsApp (%0A creates a line break)
-    const message = `Hello Rekobo! I'd like to schedule a waste pickup.%0A%0A*Name:* ${name}%0A*My Number:* ${whatsapp}%0A*Address:* ${address}%0A*Waste Type:* ${wasteType}%0A*Notes:* ${notes || 'None'}`;
+        const message = `Hello Rekobo! I'd like to schedule a waste pickup.%0A%0A*Name:* ${name}%0A*My Number:* ${whatsapp}%0A*Address:* ${address}%0A*Waste Type:* ${wasteType}%0A*Notes:* ${notes || 'None'}`;
+        
+        // Using the reliable api.whatsapp.com link format
+        const whatsappURL = `https://api.whatsapp.com/send?phone=${rekoboWhatsAppNumber}&text=${message}`;
+        window.open(whatsappURL, '_blank');
+        
+        modal.style.display = 'none';
+        pickupForm.reset();
+    });
+}
 
-    // IMPORTANT: Replace this with Rekobo's actual WhatsApp number. 
-    // Format: Country code followed by the number, no plus sign or spaces (e.g., 2348012345678).
-    const rekoboWhatsAppNumber = "2340000000000"; 
-    
-    // Create the WhatsApp URL and open it in a new tab
-    const whatsappURL = `https://wa.me/${rekoboWhatsAppNumber}?text=${message}`;
-    window.open(whatsappURL, '_blank');
-    
-    // Optional: Close the modal after clicking submit
-    modal.style.display = 'none';
-    // Optional: Clear the form fields after submit
-    document.getElementById('pickup-form').reset();
-});
+// --- Contact Page Dedicated Form Submission ---
+const contactForm = document.getElementById('contact-booking-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevents the page from refreshing and jumping to the top
+
+        const name = document.getElementById('contact-name').value;
+        const phone = document.getElementById('contact-phone').value;
+        const address = document.getElementById('contact-address').value;
+        const serviceDropdown = document.getElementById('contact-service');
+        const service = serviceDropdown.options[serviceDropdown.selectedIndex].text;
+
+        const message = `Hello Rekobo! I'd like to book a service.%0A%0A*Name:* ${name}%0A*Number:* ${phone}%0A*Address:* ${address}%0A*Service Needed:* ${service}`;
+
+        const whatsappURL = `https://api.whatsapp.com/send?phone=${rekoboWhatsAppNumber}&text=${message}`;
+        window.open(whatsappURL, '_blank');
+        
+        contactForm.reset();
+    });
+}
