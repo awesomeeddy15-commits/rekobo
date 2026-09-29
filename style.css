@@ -372,6 +372,13 @@ footer {
     font-size: 1.8rem;
 }
 
+/* Button Group Spacing */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
 /* Unified Responsive Design */
 @media (max-width: 768px) {
     .hero {
