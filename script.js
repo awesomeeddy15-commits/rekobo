@@ -25,7 +25,7 @@ window.addEventListener('click', (event) => {
 });
 
 // --- Centralized WhatsApp Number ---
-const rekoboWhatsAppNumber = "2348036034846"; 
+const rekoboWhatsAppNumber = "2347053467683"; 
 
 // --- Modal Form Submission (All Pages) ---
 const pickupForm = document.getElementById('pickup-form');
