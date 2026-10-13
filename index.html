@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rekobo | Sustainable Waste Management</title>
+    <title>Rekobo | Sustainable Waste Management in Uyo</title>
     
-    <!-- Add your favicon here -->
     <link rel="icon" type="image/png" href="images/rekobodarkfavicon.png">
-    
-    <!-- Import Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Link to CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,24 +20,40 @@
             <a href="services.html">Services</a>
             <a href="impact.html">The Rekobo Story</a>
             <a href="contact.html">Contact</a>
-            <button class="btn-dark open-modal" style="margin-top: 1rem;">Schedule a Pickup</button>
+            <button class="btn-dark open-modal" style="margin-top: 1rem;">Arrange a Pickup</button>
         </nav>
     </header>
 
     <main>
+        <!-- Module 1: Headline, Explanation, and Three Actions -->
         <section class="hero">
             <div class="hero-content">
-                <h1>Radiating positive change, one community at a time.</h1>
-                <p>Join Rekobo's expanding network of eco-conscious individuals and businesses. Reliable, transparent waste collection and recycling designed for a sustainable future.</p>
-                <button class="btn-primary open-modal">Get Started Today</button>
+                <h1>BEFORE WASTE BECOMES DAMAGE.</h1>
+                <p>We provide a reliable, transparent PET bottle and aluminium can recovery service for Uyo. We collect directly from your door or pay you instantly for dropping off sorted materials at our facility.</p>
+                
+                <div class="button-group" style="margin-top: 2rem;">
+                    <button class="btn-primary open-modal">ARRANGE A PICKUP</button>
+                    <a href="contact.html#location-map" class="btn-dark">DROP OFF RECYCLABLES</a>
+                    <a href="partnerships.html" class="btn-dark">PARTNER WITH REKOBO</a>
+                </div>
             </div>
             <div class="hero-image">
+                <!-- Restored Original Image Link -->
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV3YdkkrNo6sKUQ1vyg4nq2efgaRcx2LI38BGXKdDn9w&s=10" alt="Rekobo community recycling" class="hero-img">
             </div>
         </section>
 
-        <section id="services" class="services">
-            <h2>Our Core Services</h2>
+        <!-- Module 1: Verified Address & WhatsApp Link -->
+        <section class="cta-banner">
+            <h2>Instant Assistance & Drop-Off</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;"><strong>Verified Drop-Off Address:</strong> Tropicana Road, Uyo, Akwa Ibom State</p>
+            <a href="https://api.whatsapp.com/send?phone=2347053467683&text=Hello%20Rekobo!%20I'm%20reaching%20out%20from%20the%20website." target="_blank" class="btn-primary">WhatsApp Contact</a>
+        </section>
+
+        <section class="services">
+            <h2>Radiating positive change, one community at a time.</h2>
+            <p style="max-width: 700px; margin: 0 auto 3rem auto;">Join Rekobo's expanding network of eco-conscious individuals and businesses. Reliable, transparent waste collection and recycling designed for a sustainable future.</p>
+            
             <div class="service-grid">
                 <div class="service-card">
                     <h3>PET & Aluminum</h3>
@@ -57,42 +69,22 @@
                 </div>
             </div>
         </section>
-
-        <!-- Call-to-Action Banner replacing the static form -->
-        <section class="cta-banner">
-            <h2>Ready to make an impact?</h2>
-            <p>Join the Rekobo community and start recycling today.</p>
-            <button class="btn-dark open-modal" style="margin-top: 1rem;">Schedule a Pickup</button>
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Rekobo. All rights reserved.</p>
+        <p>&copy; 2026 REKOBO Limited. Building a cleaner Uyo.</p>
     </footer>
 
-    <!-- The Hidden Modal Form -->
+    <!-- The Hidden Modal Form (Module 2 Foundation) -->
     <div id="pickup-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2>Schedule a Pickup</h2>
             <p style="margin-bottom: 2rem; color: #555; font-size: 0.95rem;">Fill out the details below. We'll reach out on WhatsApp to confirm.</p>
-            
             <form id="pickup-form">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="e.g. Jane Okoro">
-                </div>
-                
-                <div class="form-group">
-                    <label for="whatsapp">WhatsApp Number</label>
-                    <input type="tel" id="whatsapp" name="whatsapp" required placeholder="e.g. +234 ...">
-                </div>
-                
-                <div class="form-group">
-                    <label for="address">Pickup Address</label>
-                    <input type="text" id="address" name="address" required placeholder="Street address or nearest landmark">
-                </div>
-                
+                <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" required></div>
+                <div class="form-group"><label for="whatsapp">WhatsApp Number</label><input type="tel" id="whatsapp" name="whatsapp" required></div>
+                <div class="form-group"><label for="address">Pickup Address</label><input type="text" id="address" name="address" required></div>
                 <div class="form-group">
                     <label for="waste-type">Primary Waste Type</label>
                     <select id="waste-type" name="waste-type" required>
@@ -103,18 +95,12 @@
                         <option value="mixed">Mixed Household Recycling</option>
                     </select>
                 </div>
-                
-                <div class="form-group">
-                    <label for="notes">Additional Instructions (Optional)</label>
-                    <textarea id="notes" name="notes" placeholder="Estimated volume, gate codes..."></textarea>
-                </div>
-                
+                <div class="form-group"><label for="notes">Additional Instructions (Optional)</label><textarea id="notes" name="notes"></textarea></div>
                 <button type="submit" class="btn-primary submit-btn">Request Pickup</button>
             </form>
         </div>
     </div>
-
-    <!-- Link to JS file -->
+    
     <script src="script.js"></script>
 </body>
 </html>
