@@ -34,18 +34,20 @@ export async function submitWebsiteForm(formData: FormData) {
     .update({ reference_number: orderNumber })
     .eq('id', newPickup.id);
 
-  const pickupsWebhookUrl = "https://hook.eu1.make.com/yep33y0j593y72gclrb7rl7mjw3a7cgl"; 
+  const makeWebhookUrl = "https://hook.eu1.make.com/dvgimt7fobsl7hbg5onfkqu316yzrfbi"; 
   
-  await fetch(pickupsWebhookUrl, {
+  await fetch(makeWebhookUrl, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       orderNumber: orderNumber,
-      organization: customerName,      
-      phone: customerPhone,            
-      address: address,                
-      estimated_volume: wasteType,     
-      email: "N/A"
+      organization: customerName,
+      type: "Pickup / Service Booking",
+      contactPerson: customerName,
+      phone: customerPhone,
+      email: "N/A",
+      estimated_volume: wasteType,
+      address: address
     })
   }).catch(err => console.error("Make.com error:", err));
 
@@ -93,8 +95,8 @@ export async function submitPartnershipForm(formData: FormData) {
       type: orgType,
       contactPerson: contactPerson,
       phone: phone,
-      email: email,              
-      estimated_volume: volume,  
+      email: email,
+      estimated_volume: volume,
       address: address
     })
   }).catch(err => console.error("Make.com error:", err));
