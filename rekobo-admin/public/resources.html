@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekobo | Ecosystem & Founder Resources</title>
+    
+    <link rel="icon" type="image/png" href="images/rekobodarkfavicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/rekobodarklogo.png" alt="Rekobo Logo" class="nav-logo">
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="impact.html">The Rekobo Story</a>
+            <a href="contact.html">Contact</a>
+            <button type="button" class="btn-dark open-modal" style="margin-top: 1rem;">Schedule a Pickup</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header" style="background-color: var(--dark-green); color: var(--white); padding: 5rem 5%; text-align: center;">
+            <h1 style="font-size: 2.8rem; margin-bottom: 1rem;">Ecosystem Resources.</h1>
+            <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; opacity: 0.9;">Building a sustainable waste management venture in Nigeria takes persistence and the right connections. Here are useful resources for founders, impact builders, and community partners.</p>
+        </section>
+
+        <section class="services">
+            <h2>Tools for Impact Startups & Partners</h2>
+            <div class="service-grid">
+                
+                <div class="service-card">
+                    <h3>Startup Fundraising</h3>
+                    <p>For climate-tech and local impact founders preparing to raise capital, <a href="https://www.investorlist.com" target="_blank" style="color: var(--dark-green); font-weight: 700; text-decoration: underline;">Investorlist.com</a> - downloadable, curated lists of active startup investors, angels, VCs, and family offices. It is a practical starting point for researching Nigeria-focused and ESG investors.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Commercial Waste Audits</h3>
+                    <p>Hotels, estates, schools, and offices in Uyo looking to transition away from unmanaged dumping can partner directly with Rekobo to set up clean PET and aluminium recovery streams.</p>
+                    <p style="margin-top: 1rem;"><a href="partnerships.html" style="color: var(--dark-green); font-weight: 700; text-decoration: underline;">Partner with Rekobo &rarr;</a></p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Household Sorting Guide</h3>
+                    <p>Keeping recyclables dry and separated at home prevents blocked drainages and increases the value of your materials. Drop off sorted PET bottles and cans at our Tropicana Road facility for instant payouts.</p>
+                    <p style="margin-top: 1rem;"><a href="services.html" style="color: var(--dark-green); font-weight: 700; text-decoration: underline;">View drop-off rates &rarr;</a></p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 REKOBO Limited. Building a cleaner Uyo. | <a href="resources.html" style="color: inherit; text-decoration: underline;">Resources</a></p>
+    </footer>
+
+    <!-- Hidden Modal Form so the nav button works -->
+    <div id="pickup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Schedule a Pickup</h2>
+            <p style="margin-bottom: 2rem; color: #555; font-size: 0.95rem;">Fill out the details below. We'll reach out on WhatsApp to confirm.</p>
+            <form id="pickup-form">
+                <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" required></div>
+                <div class="form-group"><label for="whatsapp">WhatsApp Number</label><input type="tel" id="whatsapp" name="phone" required></div>
+                <div class="form-group"><label for="address">Pickup Address</label><input type="text" id="address" name="address" required></div>
+                <div class="form-group">
+                    <label for="waste-type">Primary Waste Type</label>
+                    <select id="waste-type" name="waste_type" required>
+                        <option value="" disabled selected>Select what we are picking up...</option>
+                        <option value="pet-aluminum">PET Bottles & Aluminum Cans</option>
+                        <option value="cardboard">Cardboard & Paper</option>
+                        <option value="ewaste">E-Waste</option>
+                        <option value="mixed">Mixed Household Recycling</option>
+                    </select>
+                </div>
+                <div class="form-group"><label for="notes">Additional Instructions (Optional)</label><textarea id="notes" name="notes"></textarea></div>
+                <button type="submit" class="btn-primary submit-btn">Request Pickup</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
